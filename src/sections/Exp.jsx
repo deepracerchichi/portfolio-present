@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState} from "react";
+
 
 const experiences = [
   {
@@ -72,7 +71,7 @@ const Exp = () => {
 
            {/* Experience Items */}
 
-           <div className='space-y-2'>
+           <div className='space-y-10'>
             {experiences.map((exp, idx)=> (
               <div 
               key={idx}

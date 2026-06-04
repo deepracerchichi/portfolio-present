@@ -16,12 +16,12 @@ const contactInfo = [
     value: "+2349070779255",
     href: "tel:+2349070779255"
   },
-  {
-    icon: MapPin,
-    label: "Location",
-    value: "State, Country",
-    href: "https://www.google.com/maps/place/Your+Location"
-  }
+  // {
+  //   icon: MapPin,
+  //   label: "Location",
+  //   value: "State, Country",
+  //   href: "https://www.google.com/maps/place/Your+Location"
+  // }
 ]
 export const Contact = () => {
 
