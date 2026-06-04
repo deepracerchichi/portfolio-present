@@ -1,16 +1,15 @@
-import React from "react"
+import "react"
 import Button from "../components/Button"
 import { ArrowRight, ChevronDown, Github, GithubIcon, Linkedin,Download } from "lucide-react"
+import resume from "/public/pdf/ChinyereUkpong.pdf"
 
 import AnimatedBorderButton  from "../components/AnimatedBorderButton"
 import { FaReact } from "react-icons/fa6"
-import { FcNext } from "react-icons/fc"
-import { RiGenderlessFill, RiJavascriptFill, RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
-import { SiAppwrite, SiGreensock, SiRedis, SiRender, SiShadcnui, SiTypescript } from "react-icons/si"
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
+import { SiAppwrite, SiGreensock, SiRedis, SiRender } from "react-icons/si"
 import { BsJavascript, BsTypescript } from "react-icons/bs"
 import { BiLogoMongodb, BiLogoNodejs, BiLogoPostgresql } from "react-icons/bi"
-import { DiDocker, DiGithubFull } from "react-icons/di"
-import { TbBrandDocker, TbBrandReactNative, TbBrandVercel } from "react-icons/tb"
+import { TbBrandDocker, TbBrandVercel } from "react-icons/tb"
 
 const Hero = () => {
     const skills = [
@@ -109,8 +108,11 @@ const Hero = () => {
                             </Button>
 
                             <AnimatedBorderButton>
-                                <Download className="w-5 h-5"/>
-                                Download CV
+                                <a href={resume} download="ChinyereUkpong" className="flex justify-between gap-2 items-center">
+                                    <Download className="w-5 h-5"/>
+                                    Download CV
+                                </a>
+
                             </AnimatedBorderButton>
                         </div>
 
