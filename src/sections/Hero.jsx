@@ -33,6 +33,13 @@ const Hero = () => {
 
 
     ]
+
+    const gotocontact = () => {
+        const section = document.getElementById("contact");
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    }
     return (
         <section className="relative min-h-screen flex items-center overflow-hidden">
             {/*Background */}
@@ -103,7 +110,7 @@ const Hero = () => {
 
                         {/* CTA Buttons */}
                         <div className="flex  justify-center flex-wrap gap-4 animate-fade-in animation-delay-300">
-                            <Button size="lg">
+                            <Button size="lg" onClick={gotocontact}>
                                 Contact Me <ArrowRight className="w-5 h-5"/>
                             </Button>
 
@@ -163,7 +170,7 @@ const Hero = () => {
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800 mt-10"
             >
                 <a
-                href="#about"
+                href="#project"
                 className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
                 >
                 <span className="text-xs uppercase tracking-wider">Scroll</span>

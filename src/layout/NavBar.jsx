@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react'
 import Button from '../components/Button'
 import { Menu, X, XIcon} from 'lucide-react'
 
+
 const NavBar = () => {
   const navLinks =[
     {
@@ -37,6 +38,13 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
     
   }, [])
+
+  const scrollcontact = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
   return (
     <header className={`fixed top-0 left-0 transition-all duration-400 ${isScrolled ? "glass-clear py-3" : "bg-transparent py-5"} right-0 z-50`}>
       <nav className='container mx-auto flex items-center justify-between px-4'>
@@ -58,13 +66,13 @@ const NavBar = () => {
         {/* CTA Buttons*/}
 
         <div className='hidden md:block'>
-          <Button size='sm'>
+          <Button size='sm' onClick={scrollcontact}>
             Contact Me
           </Button>
         </div>
 
 
-        {/* Mbile Button */}
+        {/* Mobile Button */}
         <button 
           className='md:hidden p-2 text-foreground '
           onClick={()=> setIsMobileMenuOpen((prev)=> !prev)}>
