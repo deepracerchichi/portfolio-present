@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle} from "lucide-react"
+import  { useState } from 'react'
+import { Mail, Phone, Send, CheckCircle, AlertCircle} from "lucide-react"
 import Button from "../components/Button"
 import emailjs from "@emailjs/browser"
 
@@ -108,7 +108,7 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className=" grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className=" grid lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
           <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
             <form className="space-y-6" onSubmit={handleSubmit}>
 
