@@ -108,8 +108,8 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className=" grid lg:grid-cols-2 gap-12 max-w-2xl mx-auto">
-          <div className="glass p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300">
+        <div className="grid lg:grid-cols-2 gap-12 w-full max-w-5xl mx-auto">
+          <div className="glass p-4 sm:p-8 rounded-3xl border border-primary/30 animate-fade-in animation-delay-300 min-w-0">
             <form className="space-y-6" onSubmit={handleSubmit}>
 
               <div>
@@ -218,7 +218,7 @@ export const Contact = () => {
 
           {/* Contact Info*/}
 
-          <div className="space-y-6 animate-fade-in animation-delay-400">
+          <div className="space-y-6 animate-fade-in animation-delay-400 min-w-0">
             <div className="glass rounded-3xl p-8">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
@@ -237,7 +237,7 @@ export const Contact = () => {
                       <div className="text-sm text-muted-foreground">
                         {item.label}
                       </div>
-                      <div className="font-medium">{item.value}</div>
+                      <div className="font-medium break-all">{item.value}</div>
                     </div>
                   </a>
                 ))}
