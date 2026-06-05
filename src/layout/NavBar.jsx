@@ -96,7 +96,7 @@ const NavBar = () => {
                 {link.label}
               </a>
             ))}
-            <Button onClick={() => setIsMobileMenuOpen(false)}>
+            <Button onClick={() => { setIsMobileMenuOpen(false); scrollcontact(); }}>
               Contact Me
             </Button>
           </div>
