@@ -3,6 +3,17 @@ import React from 'react'
 import AnimatedBorderButton from "../components/AnimatedBorderButton"
 
 const project = [
+
+  {
+    title: "nestFind",
+    description: "A full-stack real estate listing platform with real-time buyer-seller messaging, JWT authentication, and moderator-reviewed listing verification",
+    image: "/projects/nestFind.jpg",
+    tags: ["Next.js", "Express", "MongoDB", "Socket.IO"],
+    link: "https://nest-find-navy.vercel.app/",
+    github: "https://github.com/deepracerchichi/nestFind",
+  },
+
+
   {
     title: "Sheila",
     description: "A note taking web application with create delete and update functionalities and rate limiting",
