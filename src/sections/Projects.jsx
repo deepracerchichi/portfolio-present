@@ -50,7 +50,7 @@ const project = [
   {
     title: "Coupon Dash",
     description: "A one-tap endless runner built with vanilla HTML5 Canvas and JavaScript for Vouchermatic's Game Development Challenge — dodge gaps, collect coupons, and beat your best score.",
-    image: "/projects/coupon-dash.png",
+    image: "/projects/coup.jpg",
     tags: ["JavaScript", "HTML5 Canvas", "Web Audio API", "Game Dev"],
     link: "https://coupon-dash.vercel.app",
     github: "https://github.com/deepracerchichi/coupon-dash",
