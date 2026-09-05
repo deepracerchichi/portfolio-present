@@ -20,26 +20,23 @@ gsap.registerPlugin(ScrambleTextPlugin)
 
 const Hero = () => {
     const skills = [
-        {icon: FaReact, color: "#61DAFB"},
-        {icon: RiNextjsFill, color: "#ffffff"},
-        {icon: BsTypescript, color: "#3178C6"},
-        {icon: BsJavascript, color: "#F7DF1E"},
-        {icon: BiLogoNodejs, color: "#51b410"},
-        {icon: BiLogoPostgresql, color: "#336791"},
-        {icon: BiLogoMongodb, color: "#47A248"},
-        {icon: SiRedis, color: "#D84949"},
-        {icon: RiTailwindCssFill, color: "#06B6D4"},
-        {icon: GithubIcon, color: "#841aa4"},
-        {icon: SiGreensock, color: "#92ff58"},
-        {icon: SiRender, color: "#19eace"},
-        {icon: SiAppwrite, color: "#F02E65"},
-        {icon: TbBrandVercel, color: "#ffffff"},
-        {icon: TbBrandDocker, color: "#2451F7"},
-        
+    {icon: FaReact, color: "#61DAFB", name: "React"},
+    {icon: RiNextjsFill, color: "#ffffff", name: "Next.js"},
+    {icon: BsTypescript, color: "#3178C6", name: "TypeScript"},
+    {icon: BsJavascript, color: "#F7DF1E", name: "JavaScript"},
+    {icon: BiLogoNodejs, color: "#51b410", name: "Node.js"},
+    {icon: BiLogoPostgresql, color: "#336791", name: "PostgreSQL"},
+    {icon: BiLogoMongodb, color: "#47A248", name: "MongoDB"},
+    {icon: SiRedis, color: "#D84949", name: "Redis"},
+    {icon: RiTailwindCssFill, color: "#06B6D4", name: "Tailwind CSS"},
+    {icon: GithubIcon, color: "#841aa4", name: "GitHub"},
+    {icon: SiGreensock, color: "#92ff58", name: "GSAP"},
+    {icon: SiRender, color: "#19eace", name: "Render"},
+    {icon: SiAppwrite, color: "#F02E65", name: "Appwrite"},
+    {icon: TbBrandVercel, color: "#ffffff", name: "Vercel"},
+    {icon: TbBrandDocker, color: "#2451F7", name: "Docker"},
+]
 
-
-
-    ]
 
     const gotocontact = () => {
         const section = document.getElementById("contact");
@@ -47,6 +44,9 @@ const Hero = () => {
             section.scrollIntoView({ behavior: "smooth" });
         }
     }
+
+    
+
 
     const containerRef = useRef(null);
 
@@ -145,6 +145,7 @@ tl.to("[data-line1-prefix]", {
     duration: 1.5,
     scrambleText: { text: "I build scalable web apps.", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
 }, "-=0.3")
+
 
 
 
@@ -257,23 +258,27 @@ interaction details most people skip.
                 </div>
 
                 {/* Skills */}
-                <div className="mt-20 animate-fade-in animation-delay-600">
-                    <p className="text-xl font-semibold text-foreground mb-6 text-center">
-                        Technologies I build with: 
+                {/* <div data-tech-section className="mt-24 py-10 animate-fade-in animation-delay-600 overflow-hidden">
+                    <p className="text-xl font-semibold text-foreground mb-10 text-center">
+                        Technologies I build with:
                     </p>
-                    <div className="relative overflow-hidden">
-                        <div className="flex animate-marquee">
+                    <div data-tech-strip className="flex gap-6 w-max">
                         {[...skills, ...skills].map((skill, idx) => (
-                            <div key={idx} className="shrink-0 px-8 py-4">
-                                <span>
-                                    {<skill.icon className="w-15 h-15" style={{ color: skill.color }}/>}
+                            <div
+                                key={idx}
+                                className="group relative glass rounded-2xl flex items-center justify-center p-6 shrink-0"
+                            >
+                                <skill.icon className="w-14 h-14" style={{ color: skill.color }} />
+                                <span className="absolute -top-9 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-surface border border-border/50 text-xs whitespace-nowrap opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-200 pointer-events-none">
+                                    {skill.name}
                                 </span>
                             </div>
+
                         ))}
-                        
-                        </div>
                     </div>
-                </div>
+                </div> */}
+
+
             </div>
 
             <div

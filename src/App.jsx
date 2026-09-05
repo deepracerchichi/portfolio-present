@@ -8,6 +8,7 @@ import { Contact } from './sections/Contact'
 import Testmonials from './sections/Test'
 import Footer from './layout/Footer'
 import Article from './sections/Article'
+import TechStack from './sections/TechStack'
 
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
       <NavBar />
       <main>
         <Hero />
+        <TechStack />
         <About />
         <Projects />
         <Exp />
