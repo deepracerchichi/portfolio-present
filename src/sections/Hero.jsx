@@ -10,6 +10,13 @@ import { SiAppwrite, SiGreensock, SiRedis, SiRender } from "react-icons/si"
 import { BsJavascript, BsTypescript } from "react-icons/bs"
 import { BiLogoMongodb, BiLogoNodejs, BiLogoPostgresql } from "react-icons/bi"
 import { TbBrandDocker, TbBrandVercel } from "react-icons/tb"
+import {useRef} from "react";
+import gsap from "gsap";
+import {useGSAP} from "@gsap/react";
+import {SplitText} from "gsap/SplitText";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin"
+
+gsap.registerPlugin(ScrambleTextPlugin)
 
 const Hero = () => {
     const skills = [
@@ -40,8 +47,112 @@ const Hero = () => {
             section.scrollIntoView({ behavior: "smooth" });
         }
     }
+
+    const containerRef = useRef(null);
+
+    useGSAP(()=> {
+         //const split = SplitText.create("[data-hero-headline]", {type: "chars"})
+
+        // FADE IN CHARACTERS
+        // gsap.from(split.chars, {
+        //     y: 40,
+        //     opacity: 0,
+        //     duration: 0.6,
+        //     stagger: 0.03,
+        //     ease: "power3.out",
+        // })
+
+        //FLIP IN ANIMATION
+        // gsap.set("[data-hero-headline]", { perspective: 400 })
+
+        // gsap.from(split.chars, {
+        //     rotationX: -90,
+        //     transformOrigin: "50% 50% -20px",
+        //     opacity: 0,
+        //     duration: 0.6,
+        //     stagger: 0.03,
+        //     ease: "back.out(2)",
+        // })
+
+        //SCRAMBLE TEXT ANIMATION
+        // gsap.to("[data-hero-name]", {
+        //     duration: 2.5,
+        //     scrambleText: {
+        //         text: "Chinyere",
+        //         chars: "upperAndLowerCase",
+        //         revealDelay: 0.5,
+        //         speed: 0.3,
+        //     },
+        // })
+
+        //LINE MASK REVEAL
+        // SplitText.create("[data-hero-headline]", {
+        //     type: "lines",
+        //     mask: "lines",
+        //     onSplit: (self) => {
+        //         return gsap.from(self.lines, {
+        //             yPercent: 100,
+        //             duration: 2.0,
+        //             stagger: 0.15,
+        //             ease: "power4.out",
+        //         })
+        //     },
+        // })
+
+        //LINE MASK REVEAL + SCRAMBLE NAME
+    // SplitText.create("[data-hero-headline]", {
+    //     type: "lines",
+    //     mask: "lines",
+    //     onSplit: (self) => {
+    //         const tl = gsap.timeline()
+
+    //         tl.from(self.lines, {
+    //             yPercent: 100,
+    //             duration: 0.8,
+    //             stagger: 0.15,
+    //             ease: "power4.out",
+    //         })
+    //         .to("[data-hero-name]", {
+    //             duration: 1.5,
+    //             scrambleText: {
+    //                 text: "Chinyere",
+    //                 chars: "upperAndLowerCase",
+    //                 revealDelay: 0.4,
+    //                 speed: 0.3,
+    //             },
+    //         }, "-=0.4")
+
+    //         return tl
+    //     },
+    // })
+
+    //SCRAMBLE BOTH SENTENCES
+const tl = gsap.timeline()
+
+tl.to("[data-hero-line1]", {
+    duration: 1.2,
+    scrambleText: {
+        text: "Hi, I'm Chinyere.",
+        chars: "upperAndLowerCase",
+        revealDelay: 0.2,
+        speed: 0.3,
+    },
+})
+.to("[data-hero-line2]", {
+    duration: 1.5,
+    scrambleText: {
+        text: "I build scalable web apps.",
+        chars: "upperAndLowerCase",
+        revealDelay: 0.2,
+        speed: 0.3,
+    },
+}, "-=0.3")
+
+
+
+    }, {scope: containerRef})
     return (
-        <section className="relative min-h-screen flex items-center overflow-hidden">
+        <section ref={containerRef} className="relative min-h-screen flex items-center overflow-hidden">
             {/*Background */}
             <div className="absolute inset-0">
                 <img
@@ -90,14 +201,10 @@ const Hero = () => {
 
                         {/* Headline */}
                         <div className="space-y-4">
-                            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                                Building <span className="text-primary glow-text">Practical</span> Solutions  
+                            <h1 data-hero-headline className="text-5xl md:text-6xl lg:text-7xl font-bold font-grot leading-tight ">
+                                <span data-hero-line1>Hi, I'm <span data-hero-name className="text-primary glow-text">Chinyere</span>.</span>  
                                <br />
-                               Through
-                               <br />
-                                <span className="font-serif italic font-normal text-white">
-                                    Code and Design.
-                                </span>
+                               <span data-hero-line2>I build <span className=" italic text-white">scalable</span> web apps.</span>
                                 
                             </h1>
 

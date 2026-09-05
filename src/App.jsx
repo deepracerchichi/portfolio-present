@@ -7,6 +7,7 @@ import Exp from './sections/Exp'
 import { Contact } from './sections/Contact'
 import Testmonials from './sections/Test'
 import Footer from './layout/Footer'
+import Article from './sections/Article'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <About />
         <Projects />
         <Exp />
+        <Article />
         <Testmonials />
         <Contact />
         

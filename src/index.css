@@ -43,6 +43,9 @@
   .font-serif {
     font-family: 'Bitter', serif;
   }
+  .font-grot {
+    font-family: 'Bricolage Grotesque', sans-serif;
+  }
 }
 
 @layer components {
