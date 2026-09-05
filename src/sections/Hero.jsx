@@ -126,26 +126,24 @@ const Hero = () => {
     //     },
     // })
 
-    //SCRAMBLE BOTH SENTENCES
+   //SCRAMBLE BOTH SENTENCES
 const tl = gsap.timeline()
 
-tl.to("[data-hero-line1]", {
-    duration: 1.2,
-    scrambleText: {
-        text: "Hi, I'm Chinyere.",
-        chars: "upperAndLowerCase",
-        revealDelay: 0.2,
-        speed: 0.3,
-    },
+tl.to("[data-line1-prefix]", {
+    duration: 1,
+    scrambleText: { text: "Hi, I'm ", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
 })
+.to("[data-hero-name]", {
+    duration: 1.2,
+    scrambleText: { text: "Chinyere", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
+}, "<")
+.to("[data-line1-suffix]", {
+    duration: 0.3,
+    scrambleText: { text: ".", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
+}, "<")
 .to("[data-hero-line2]", {
     duration: 1.5,
-    scrambleText: {
-        text: "I build scalable web apps.",
-        chars: "upperAndLowerCase",
-        revealDelay: 0.2,
-        speed: 0.3,
-    },
+    scrambleText: { text: "I build scalable web apps.", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
 }, "-=0.3")
 
 
@@ -202,16 +200,21 @@ tl.to("[data-hero-line1]", {
                         {/* Headline */}
                         <div className="space-y-4">
                             <h1 data-hero-headline className="text-5xl md:text-6xl lg:text-7xl font-bold font-grot leading-tight ">
-                                <span data-hero-line1>Hi, I'm <span data-hero-name className="text-primary glow-text">Chinyere</span>.</span>  
+                                <span data-hero-line1>
+                                    <span data-line1-prefix>Hi, I'm  </span>
+                                    <span data-hero-name className="text-primary glow-text">Chinyere</span>
+                                    <span data-line1-suffix>.</span>
+                                </span>
+  
                                <br />
                                <span data-hero-line2>I build <span className=" italic text-white">scalable</span> web apps.</span>
                                 
                             </h1>
 
                             <p className="text-lg w-10/12 text-white  animate-fade-in animation-delay-200 mx-auto">
-                                Hi, I'm Chinyere Ukpong. 
-                                I build fast, scalable web applications with React and Next.js 
-                                and I care deeply about the details that make them feel right.
+                                Currently focused on React and Next.js — with a soft spot for the small
+interaction details most people skip.
+
                             </p>
                         </div>
 
