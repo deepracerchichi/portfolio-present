@@ -9,14 +9,14 @@ gsap.registerPlugin(ScrollTrigger)
 
 const articles = [
     {
-        title: "Building Real-Time Chat With Socket.IO",
-        excerpt: "Notes on how nestFind's buyer-seller messaging works under the hood.",
-        link: "#",
+        title: "JWTs are Like Stamped Letters",
+        excerpt: "A deep dive into how JSON Web Tokens work under the hood.",
+        link: "https://dev.to/nenedoesfrontend/jwts-are-like-stamped-letters-c96",
     },
     {
-        title: "What I Learned Building a GSAP-Heavy Site",
-        excerpt: "Parallax, scroll reveals, and the performance traps from building The Camel.",
-        link: "#",
+        title: "React has Two Kinds of Data",
+        excerpt: "Notes on how React's state and props work under the hood.",
+        link: "https://dev.to/nenedoesfrontend/react-has-two-kinds-of-data-121o",
     },
 ]
 

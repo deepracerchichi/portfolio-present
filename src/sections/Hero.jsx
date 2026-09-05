@@ -131,7 +131,7 @@ const tl = gsap.timeline()
 
 tl.to("[data-line1-prefix]", {
     duration: 1,
-    scrambleText: { text: "Hi, I'm ", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
+    scrambleText: { text: "Hi, I'm", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
 })
 .to("[data-hero-name]", {
     duration: 1.2,
@@ -202,7 +202,8 @@ tl.to("[data-line1-prefix]", {
                         <div className="space-y-4">
                             <h1 data-hero-headline className="text-5xl md:text-6xl lg:text-7xl font-bold font-grot leading-tight ">
                                 <span data-hero-line1>
-                                    <span data-line1-prefix>Hi, I'm  </span>
+                                    <span data-line1-prefix className="mr-2">Hi, I'm</span>
+
                                     <span data-hero-name className="text-primary glow-text">Chinyere</span>
                                     <span data-line1-suffix>.</span>
                                 </span>
