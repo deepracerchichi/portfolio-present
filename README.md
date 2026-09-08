@@ -1,16 +1,54 @@
-# React + Vite
+# Chinyere Ukpong — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site built with React and Vite, styled with Tailwind CSS, and animated with GSAP — including scroll-scrubbed and pinned scroll effects, a typewriter headline, and scroll-triggered reveals.
 
-Currently, two official plugins are available:
+## Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **React 19** + **Vite** — app shell and dev/build tooling
+- **Tailwind CSS v4** — styling, via `@tailwindcss/vite`
+- **GSAP** + **@gsap/react** (`useGSAP`) — animation, including `ScrollTrigger`, `SplitText`, and `TextPlugin`
+- **EmailJS** (`@emailjs/browser`) — contact form submissions
+- **lucide-react** / **react-icons** — iconography
 
-## React Compiler
+## Getting started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Other scripts:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build     # production build
+npm run preview   # preview the production build locally
+npm run lint      # run ESLint
+```
+
+## Structure
+
+```
+src/
+  layout/
+    NavBar.jsx
+    Footer.jsx
+  sections/
+    Hero.jsx        # intro headline (GSAP typewriter effect)
+    TechStack.jsx    # pinned, scroll-scrubbed strip of tools/languages
+    About.jsx
+    Projects.jsx
+    Exp.jsx          # experience timeline
+    Test.jsx         # testimonials carousel
+    Article.jsx      # writing/articles, pinned scroll-triggered card reveal
+    Contact.jsx      # EmailJS-powered contact form
+  components/
+    Button.jsx
+    AnimatedBorderButton.jsx
+  App.jsx
+  index.css          # Tailwind theme tokens + custom keyframes/utilities
+```
+
+## Notes
+
+- Custom animation utilities (fade-in, blink cursor, marquee, slow-drift, etc.) live in `src/index.css` under `@layer utilities`.
+- Path alias `@` resolves to `src/` (configured in `vite.config.js`).

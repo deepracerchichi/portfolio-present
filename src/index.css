@@ -179,6 +179,16 @@
     animation: marquee 20s linear infinite;
   }
 
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+
   .timeline-glow {
     box-shadow: 
       0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),

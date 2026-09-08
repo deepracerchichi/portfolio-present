@@ -151,7 +151,7 @@ const Hero = () => {
 
     //TYPEWRITER HEADLINE
    //TYPEWRITER HEADLINE
-const CURSOR = ["after:content-['|']", "after:ml-1", "after:animate-pulse"]
+const CURSOR = ["after:content-['|']", "after:ml-1", "after:animate-blink"]
 
 const typeInto = (selector, text, duration) => ({
     duration,
