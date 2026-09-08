@@ -15,8 +15,10 @@ import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/SplitText";
 import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin"
+import { TextPlugin } from "gsap/TextPlugin"
 
-gsap.registerPlugin(ScrambleTextPlugin)
+
+gsap.registerPlugin(ScrambleTextPlugin, TextPlugin)
 
 const Hero = () => {
     const skills = [
@@ -127,24 +129,52 @@ const Hero = () => {
     // })
 
    //SCRAMBLE BOTH SENTENCES
+    // const tl = gsap.timeline()
+
+    // tl.to("[data-line1-prefix]", {
+    //     duration: 1,
+    //     scrambleText: { text: "Hi, I'm", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
+    // })
+    // .to("[data-hero-name]", {
+    //     duration: 1.2,
+    //     scrambleText: { text: "Chinyere", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
+    // }, "<")
+    // .to("[data-line1-suffix]", {
+    //     duration: 0.3,
+    //     scrambleText: { text: ".", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
+    // }, "<")
+    // .to("[data-hero-line2]", {
+    //     duration: 1.5,
+    //     scrambleText: { text: "I build scalable web apps.", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
+    // }, "-=0.3")
+
+
+    //TYPEWRITER HEADLINE
+   //TYPEWRITER HEADLINE
+const CURSOR = ["after:content-['|']", "after:ml-1", "after:animate-pulse"]
+
+const typeInto = (selector, text, duration) => ({
+    duration,
+    text,
+    ease: "none",
+    onStart: () => document.querySelector(selector)?.classList.add(...CURSOR),
+    onComplete: () => document.querySelector(selector)?.classList.remove(...CURSOR),
+})
+
+const targets = [
+    "[data-line1-prefix]", "[data-hero-name]", "[data-line1-suffix]",
+    "[data-line2-prefix]", "[data-line2-emphasis]", "[data-line2-suffix]",
+]
+
 const tl = gsap.timeline()
 
-tl.to("[data-line1-prefix]", {
-    duration: 1,
-    scrambleText: { text: "Hi, I'm", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
-})
-.to("[data-hero-name]", {
-    duration: 1.2,
-    scrambleText: { text: "Chinyere", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
-}, "<")
-.to("[data-line1-suffix]", {
-    duration: 0.3,
-    scrambleText: { text: ".", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
-}, "<")
-.to("[data-hero-line2]", {
-    duration: 1.5,
-    scrambleText: { text: "I build scalable web apps.", chars: "upperAndLowerCase", revealDelay: 0.05, speed: 0.3 },
-}, "-=0.3")
+tl.set(targets, { text: "" })
+.to("[data-line1-prefix]", typeInto("[data-line1-prefix]", "Hi, I'm", 0.6))
+.to("[data-hero-name]", typeInto("[data-hero-name]", "Chinyere", 0.8))
+.to("[data-line1-suffix]", typeInto("[data-line1-suffix]", ".", 0.15))
+.to("[data-line2-prefix]", typeInto("[data-line2-prefix]", "I build ", 0.6))
+.to("[data-line2-emphasis]", typeInto("[data-line2-emphasis]", "scalable", 0.6))
+.to("[data-line2-suffix]", typeInto("[data-line2-suffix]", " web apps.", 0.9))
 
 
 
@@ -209,8 +239,12 @@ tl.to("[data-line1-prefix]", {
                                 </span>
   
                                <br />
-                               <span data-hero-line2>I build <span className=" italic text-white">scalable</span> web apps.</span>
-                                
+                               <span data-hero-line2>
+                                    <span data-line2-prefix>I build </span>
+                                    <span data-line2-emphasis className="italic text-white">scalable</span>
+                                    <span data-line2-suffix > web apps.</span>
+                                </span>
+
                             </h1>
 
                             <p className="text-lg w-10/12 text-white  animate-fade-in animation-delay-200 mx-auto">
