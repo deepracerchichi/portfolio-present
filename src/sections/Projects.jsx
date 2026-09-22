@@ -1,5 +1,5 @@
-import { ArrowRight, ArrowUpRight, Github } from 'lucide-react'
-import React from 'react'
+import { ArrowUpRight, Github } from 'lucide-react'
+
 import AnimatedBorderButton from "../components/AnimatedBorderButton"
 
 const project = [
@@ -12,7 +12,14 @@ const project = [
     link: "https://nest-find-navy.vercel.app/",
     github: "https://github.com/deepracerchichi/nestFind",
   },
-
+  {
+    title: "The Bakery",
+    description: "A webapp  for all my personal thoughts and articles I feel like writing on the go",
+    image: "/projects/thebakery.jpeg",
+    tags: ["Nestjs", "Vercel Blob", "MongoDB"],
+    link: "https://in-the-bakery.vercel.app/",
+    github: "https://github.com/deepracerchichi/the-bakery"
+  },
 
   {
     title: "Sheila",
@@ -55,6 +62,8 @@ const project = [
     link: "https://coupon-dash.vercel.app",
     github: "https://github.com/deepracerchichi/coupon-dash",
   },
+
+
 
 ]
 
