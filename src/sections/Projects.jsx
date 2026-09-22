@@ -15,7 +15,7 @@ const project = [
   {
     title: "The Bakery",
     description: "A webapp  for all my personal thoughts and articles I feel like writing on the go",
-    image: "/projects/thebakery.jpeg",
+    image: "/projects/thebakery.jpg",
     tags: ["Nestjs", "Vercel Blob", "MongoDB"],
     link: "https://in-the-bakery.vercel.app/",
     github: "https://github.com/deepracerchichi/the-bakery"
