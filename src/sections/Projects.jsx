@@ -12,6 +12,14 @@ const project = [
     github: "https://github.com/deepracerchichi/glycotrac",
   },
   {
+    title: "Conduit",
+    description: "Medication reminders, refill alerts and symptom tracking for people living with diabetes. Built with Next.js, TypeScript, Supabase and GSAP.",
+    image: "/projects/conduit.jpg",
+    tags: ["Next.js", "TypeScript", "Supabase", "GSAP"],
+    link: "https://github.com/deepracerchichi/connuit",
+    github: "https://github.com/deepracerchichi/connuit",
+  },
+  {
     title: "nestFind",
     description: "A full-stack real estate listing platform with real-time buyer-seller messaging, JWT authentication, and moderator-reviewed listing verification",
     image: "/projects/nestFind.jpg",
