@@ -1,4 +1,3 @@
-import React from 'react'
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import { useState } from "react";
 
@@ -6,11 +5,11 @@ import { useState } from "react";
 const testimonials = [
   {
     quote:
-      "Chinyere is one of the most talented engineers I've worked with. Her attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
+      "Chinyere is one of the few talented engineers I've worked with. Her attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
     author: "Joy Ogukah",
-    role: "Software Engineer, Tech Innovators Inc.",
+    role: "Frontend Engineer, Nigerian Breweries Plc.",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      "/People/joy.jpg",
   },
   {
     quote:
@@ -18,23 +17,23 @@ const testimonials = [
     author: "Jerry Igho",
     role: "Project Manager, Aerosub Solutions Ltd.",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+      "/People/jerry.jpg",
   },
   {
     quote:
       "Chinyere's expertise in React and TypeScript helped us rebuild our entire frontend in record time. Her architectural decisions continue to pay dividends.",
-    author: "Emily Watson",
-    role: "Engineering Lead, StartUp Labs",
+    author: "Christian Umoh",
+    role: "Senior Backend Engineer, HNG.",
     avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
+      "/People/christian.jpg",
   },
   {
     quote:
-      "Not only is Chinyere technically brilliant, but she's also a fantastic communicator and team player. She elevated everyone around her.",
-    author: "David Kim",
-    role: "CEO, Innovation Hub",
+      "Chinyere developed a very efficient solution for me, can't wait to see what new projects she takes on.",
+    author: "Ijeoma Nwadike",
+    role: "CEO, Ijeoma Nwadike Foundation.",
     avatar:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      "/People/ijeoma.jpg",
   },
 ]
 const Testmonials = () => {
