@@ -3,7 +3,14 @@ import { ArrowUpRight, Github } from 'lucide-react'
 import AnimatedBorderButton from "../components/AnimatedBorderButton"
 
 const project = [
-
+  {
+    title: "glycotrac",
+    description: "Medication reminders, refill alerts and symptom tracking for people living with diabetes. Built with Next.js, TypeScript, Supabase and GSAP.",
+    image: "/projects/glycotrac.jpg",
+    tags: ["Next.js", "TypeScript", "Supabase", "GSAP"],
+    link: "https://glycotrac.vercel.app/",
+    github: "https://github.com/deepracerchichi/glycotrac",
+  },
   {
     title: "nestFind",
     description: "A full-stack real estate listing platform with real-time buyer-seller messaging, JWT authentication, and moderator-reviewed listing verification",
