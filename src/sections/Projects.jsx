@@ -12,10 +12,10 @@ const project = [
     github: "https://github.com/deepracerchichi/glycotrac",
   },
   {
-    title: "Conduit",
-    description: "Medication reminders, refill alerts and symptom tracking for people living with diabetes. Built with Next.js, TypeScript, Supabase and GSAP.",
+    title: "Conduit (in progress)",
+    description: "AI workflow automation platform. Chain API calls and AI steps into pipelines that run on a schedule, a webhook, or a click, with durable retries, encrypted credentials, and live run history. React + TypeScript + Express + MongoDB + BullMQ.",
     image: "/projects/conduit.jpg",
-    tags: ["Next.js", "TypeScript", "Supabase", "GSAP"],
+    tags: ["React", "TypeScript", "Express", "MongoDB", "BullMQ"],
     link: "https://github.com/deepracerchichi/connuit",
     github: "https://github.com/deepracerchichi/connuit",
   },
@@ -122,7 +122,7 @@ const Projects = () => {
                   <img 
                     src={proj.image} 
                     alt={proj.title}
-                    className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110'
+                    className='w-full h-full object-contain transition-transform duration-700 group-hover:scale-110'
                   />
 
                   <div 
