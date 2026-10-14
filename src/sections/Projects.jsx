@@ -1,86 +1,8 @@
-import { ArrowUpRight, Github } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 import AnimatedBorderButton from "../components/AnimatedBorderButton"
-
-const project = [
-  {
-    title: "glycotrac",
-    description: "Medication reminders, refill alerts and symptom tracking for people living with diabetes. Built with Next.js, TypeScript, Supabase and GSAP.",
-    image: "/projects/glycotrac.jpg",
-    tags: ["Next.js", "TypeScript", "Supabase", "GSAP"],
-    link: "https://glycotrac.vercel.app/",
-    github: "https://github.com/deepracerchichi/glycotrac",
-  },
-  {
-    title: "Conduit (in progress)",
-    description: "AI workflow automation platform. Chain API calls and AI steps into pipelines that run on a schedule, a webhook, or a click, with durable retries, encrypted credentials, and live run history. React + TypeScript + Express + MongoDB + BullMQ.",
-    image: "/projects/conduit.jpg",
-    tags: ["React", "TypeScript", "Express", "MongoDB", "BullMQ"],
-    link: "https://github.com/deepracerchichi/connuit",
-    github: "https://github.com/deepracerchichi/connuit",
-  },
-  {
-    title: "nestFind",
-    description: "A full-stack real estate listing platform with real-time buyer-seller messaging, JWT authentication, and moderator-reviewed listing verification",
-    image: "/projects/nestFind.jpg",
-    tags: ["Next.js", "Express", "MongoDB", "Socket.IO"],
-    link: "https://nest-find-navy.vercel.app/",
-    github: "https://github.com/deepracerchichi/nestFind",
-  },
-  {
-    title: "The Bakery",
-    description: "A webapp  for all my personal thoughts and articles I feel like writing on the go",
-    image: "/projects/thebakery.jpg",
-    tags: ["Nestjs", "Vercel Blob", "MongoDB"],
-    link: "https://in-the-bakery.vercel.app/",
-    github: "https://github.com/deepracerchichi/the-bakery"
-  },
-
-  {
-    title: "Sheila",
-    description: "A note taking web application with create delete and update functionalities and rate limiting",
-    image: "/projects/project1.png",
-    tags: [ "React", "Express", "Upstash", "MongoDB"],
-    link: "https://sheila-mern-webapp.onrender.com/",
-    github: "https://github.com/deepracerchichi/sheila-mern-webapp",
-  },
-  {
-    title: "The Camel",
-    description: "A Modern bar website built with GSAP. Features parallax scrolling, animated transitions, and dynamic content reveals",
-    image: "/projects/project2.png",
-    tags: [ "React", "GSAP", "Zustand", "Tailwind"],
-    link: "https://thecamel-bar.vercel.app/",
-    github: "https://github.com/deepracerchichi/thecamel-bar",
-  },
-  {
-    title: "Listerr",
-    description: "An application where companies can keep track of their employees and update status",
-    image: "/projects/project3.png",
-    tags: [ "React", "PostGreSQL", "Render", "Vercel"],
-    link: "https://listerr-list.vercel.app/",
-    github: "https://github.com/deepracerchichi/LISTERR-POSTGRES",
-  },
-  {
-    title: "Altread",
-    description: "A mobile application where users can log in to track and update info for books they have read",
-    image: "/projects/project4.png",
-    tags: ["React Native", "TypeScript", "Appwrite", "ContextAPI"],
-    link: "https://github.com/deepracerchichi/altread",
-    github: "https://github.com/deepracerchichi/altread",
-  },
-
-  {
-    title: "Coupon Dash",
-    description: "A one-tap endless runner built with vanilla HTML5 Canvas and JavaScript for Vouchermatic's Game Development Challenge — dodge gaps, collect coupons, and beat your best score.",
-    image: "/projects/coup.jpg",
-    tags: ["JavaScript", "HTML5 Canvas", "Web Audio API", "Game Dev"],
-    link: "https://coupon-dash.vercel.app",
-    github: "https://github.com/deepracerchichi/coupon-dash",
-  },
-
-
-
-]
+import ProjectCard from "../components/ProjectCard"
+import { projects, FEATURED_COUNT } from "../data/projects"
 
 const Projects = () => {
   return (
@@ -110,69 +32,14 @@ const Projects = () => {
         {/* Project Grid */}
 
         <div className="grid md:grid-cols-2 gap-8">
-          {
-            project.map((proj, idx) => (
-              <div 
-                key={idx} 
-                className='group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1'
-                style={{ animationDelay: `${(idx + 1) * 100}ms`}}
-                >
-
-                <div className='relative overflow-hidden aspect-video'>
-                  <img 
-                    src={proj.image} 
-                    alt={proj.title}
-                    className='w-full h-full object-contain transition-transform duration-700 group-hover:scale-110'
-                  />
-
-                  <div 
-                   className="absolute inset-0 bg-linear-to-t from-card via-card/50 to-transparent opacity-60"
-                  />
-
-                  {/* Overlay Links */}
-                  <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <a href={proj.link} className='p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all '>
-                      <ArrowUpRight className='w-5 h-5'/>
-                    </a>
-
-                    <a href={proj.github} className='p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all '>
-                      <Github className='w-5 h-5' />
-                    </a>
-                  </div>
-                </div>
-                
-                {/*content */}
-                <div className='p-6 space-y-4'>
-                  <div className='flex items-start justify-between'>
-                    <h3 className='text-xl font-semibold group-hover:text-primary '>
-                      {proj.title}
-                    </h3>
-                    <ArrowUpRight 
-                      className="w-5 h-5 text-muted-foreground group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"
-                    />
-                  </div>
-                  <p className='text-muted-foreground text-sm'>
-                    {proj.description}
-                  </p>
-                  <div className='flex flex-wrap gap-2'>
-                    {proj.tags.map((tag, tagIdx) => (
-                      <span 
-                      key={tagIdx}
-                      className='px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300'>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))
-          }
-
+          {projects.slice(0, FEATURED_COUNT).map((proj, idx) => (
+            <ProjectCard key={idx} proj={proj} idx={idx} />
+          ))}
         </div>
 
         {/* View All CTA */}
         <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
+          <AnimatedBorderButton onClick={() => { window.location.hash = '/projects' }}>
             View All Projects
             <ArrowUpRight className="w-5 h-5"/>
           </AnimatedBorderButton>
